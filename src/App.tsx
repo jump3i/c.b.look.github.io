@@ -3,6 +3,7 @@ import CalendarPage from './pages/CalendarPage'
 import DishDetailPage from './pages/DishDetailPage'
 import DishEditPage from './pages/DishEditPage'
 import DishListPage from './pages/DishListPage'
+import SettingsPage from './pages/SettingsPage'
 import './styles/app.css'
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<DishListPage />} />
       <Route path="/calendar" element={<CalendarPage />} />
+      <Route path="/settings" element={<SettingsPage />} />
       <Route path="/dishes/new" element={<DishEditPage mode="create" />} />
       <Route path="/dishes/:id" element={<DishDetailPage />} />
       <Route path="/dishes/:id/edit" element={<DishEditPage mode="edit" />} />

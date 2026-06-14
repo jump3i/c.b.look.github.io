@@ -126,7 +126,7 @@ export default function DishEditPage({ mode }: Props) {
                   onChange={(e) => setCookedToday(e.target.checked)}
                 />
                 <span style={{ fontWeight: 700 }}>今日作った</span>
-                <span className="muted">(作った日に追加)</span>
+                <span className="muted"></span>
               </label>
             </div>
 
