@@ -43,11 +43,11 @@ export default function DishListPage() {
             <Link className="btn" to="/calendar">
               カレンダー
             </Link>
-            <Link className="btn" to="/settings" aria-label="バックアップ設定">
-              ⚙
-            </Link>
             <Link className="btn" to="/dishes/new">
               追加
+            </Link>
+            <Link className="btn" to="/settings">
+              バックアップ
             </Link>
           </div>
         </div>
