@@ -69,7 +69,7 @@ export default function SettingsPage() {
         <div className="card stack">
           <div style={{ fontWeight: 800 }}>バックアップを書き出す</div>
           <div className="muted">
-            すべての料理データをJSONファイルとして保存する．サーバーを用いてないため，履歴を消去などするとデータが消えてしまいます．．．．
+            すべての料理データをJSONファイルとして保存する．サーバーを用いてないため，履歴を消去などするとデータが消えてしまいます．．
           </div>
           <button className="btn btn-primary" type="button" onClick={onExport} disabled={busy}>
             バックアップを書き出す

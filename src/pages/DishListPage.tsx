@@ -74,8 +74,8 @@ export default function DishListPage() {
           <div className="muted">読み込み中…</div>
         ) : items.length === 0 ? (
           <div className="card stack">
-            <div>まだ料理がありません</div>
-            <div className="muted">右上の「新規」から追加できます</div>
+            <div></div>
+            <div className="muted"></div>
           </div>
         ) : (
           <div className="list">
