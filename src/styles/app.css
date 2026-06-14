@@ -2,16 +2,17 @@
 
 :root {
   color-scheme: light;
-  --bg: #fff8f1;
+  --bg: #f7f8fa;
   --surface: #ffffff;
-  --surface-2: #fff3e8;
-  --text: #2b2b33;
-  --text-muted: #79707b;
-  --border: rgba(20, 16, 24, 0.12);
+  --surface-2: #eef0f3;
+  --text: #1f2430;
+  --text-muted: #6b7280;
+  --border: rgba(17, 24, 39, 0.12);
   --primary: #f97316;
   --primary-press: #ea580c;
+  --primary-soft: rgba(249, 115, 22, 0.12);
   --danger: #ef4444;
-  --shadow: 0 6px 18px rgba(31, 24, 12, 0.08);
+  --shadow: 0 4px 16px rgba(17, 24, 39, 0.06);
 }
 
 body {
@@ -37,7 +38,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 248, 241, 0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -232,4 +233,72 @@ a {
   color: var(--text-muted);
   font-weight: 700;
   padding: 0 6px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.cal-dow {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 4px 0;
+}
+
+.cal-cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.cal-cell.empty {
+  border: none;
+  background: transparent;
+  cursor: default;
+}
+
+.cal-cell.has-cooked {
+  background: var(--primary-soft);
+  border-color: var(--primary);
+}
+
+.cal-cell.today .cal-daynum {
+  color: var(--primary);
+}
+
+.cal-cell.selected {
+  outline: 2px solid var(--primary);
+  outline-offset: -1px;
+}
+
+.cal-daynum {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.cal-count {
+  margin-top: auto;
+  align-self: flex-end;
+  min-width: 18px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border-radius: 999px;
+  padding: 1px 5px;
+  box-sizing: border-box;
 }

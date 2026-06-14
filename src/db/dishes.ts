@@ -76,9 +76,20 @@ export async function deleteDish(id: string): Promise<void> {
 }
 
 export async function addCookedToday(id: string): Promise<Dish> {
+  return addCookedDate(id, todayYmd())
+}
+
+export async function addCookedDate(id: string, ymd: string): Promise<Dish> {
   const existing = await db.dishes.get(id)
   if (!existing) throw new Error('not_found')
-  const next = uniqueYmdSortedDesc([todayYmd(), ...existing.cookedDates])
+  const next = uniqueYmdSortedDesc([ymd, ...existing.cookedDates])
+  return updateDish(id, { cookedDates: next })
+}
+
+export async function removeCookedDate(id: string, ymd: string): Promise<Dish> {
+  const existing = await db.dishes.get(id)
+  if (!existing) throw new Error('not_found')
+  const next = existing.cookedDates.filter((d) => d !== ymd)
   return updateDish(id, { cookedDates: next })
 }
 

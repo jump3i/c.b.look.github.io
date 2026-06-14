@@ -39,9 +39,14 @@ export default function DishListPage() {
       <header className="topbar">
         <div className="topbar-inner">
           <div className="title">{headerTitle}</div>
-          <Link className="btn" to="/dishes/new">
-            追加
-          </Link>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <Link className="btn" to="/calendar">
+              カレンダー
+            </Link>
+            <Link className="btn" to="/dishes/new">
+              追加
+            </Link>
+          </div>
         </div>
         <div className="topbar-inner" style={{ paddingTop: 0 }}>
           <input

@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
+import CalendarPage from './pages/CalendarPage'
 import DishDetailPage from './pages/DishDetailPage'
 import DishEditPage from './pages/DishEditPage'
 import DishListPage from './pages/DishListPage'
@@ -8,6 +9,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<DishListPage />} />
+      <Route path="/calendar" element={<CalendarPage />} />
       <Route path="/dishes/new" element={<DishEditPage mode="create" />} />
       <Route path="/dishes/:id" element={<DishDetailPage />} />
       <Route path="/dishes/:id/edit" element={<DishEditPage mode="edit" />} />
