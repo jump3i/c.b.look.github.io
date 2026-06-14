@@ -50,7 +50,7 @@ export default function SettingsPage() {
           <Link className="btn" to="/">
             一覧
           </Link>
-          <div className="title">設定・バックアップ</div>
+          <div className="title">バックアップ設定</div>
           <span />
         </div>
       </header>
@@ -69,7 +69,7 @@ export default function SettingsPage() {
         <div className="card stack">
           <div style={{ fontWeight: 800 }}>バックアップを書き出す</div>
           <div className="muted">
-            すべての料理データをJSONファイルとして保存します。サイトデータの削除や機種変更に備えて、ときどき書き出しておくと安心です。
+            すべての料理データをJSONファイルとして保存する．サーバーを用いてないため，履歴を消去などするとデータが消えてしまいます．．．．
           </div>
           <button className="btn btn-primary" type="button" onClick={onExport} disabled={busy}>
             バックアップを書き出す
@@ -77,7 +77,7 @@ export default function SettingsPage() {
         </div>
 
         <div className="card stack">
-          <div style={{ fontWeight: 800 }}>バックアップから復元する</div>
+          <div style={{ fontWeight: 800 }}>バックアップから復元</div>
           <div className="muted">書き出したJSONファイルを読み込んでデータを復元します。</div>
 
           <div className="field">
@@ -89,7 +89,7 @@ export default function SettingsPage() {
                 checked={mode === 'merge'}
                 onChange={() => setMode('merge')}
               />
-              <span>追加（今のデータに足す。同じ料理は上書き）</span>
+              <span>追加（同じ料理は上書き）</span>
             </label>
             <label className="row" style={{ justifyContent: 'flex-start', gap: 8 }}>
               <input
@@ -98,7 +98,7 @@ export default function SettingsPage() {
                 checked={mode === 'replace'}
                 onChange={() => setMode('replace')}
               />
-              <span>置き換え（今のデータを全部消してから復元）</span>
+              <span>置換（今のデータを全部消してから復元する）</span>
             </label>
           </div>
 
