@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { addCookedToday, deleteDish, getDish } from '../db/dishes'
+import { addCookedDateToCalendar } from '../lib/calendar'
 import type { Dish } from '../domain/types'
 
 export default function DishDetailPage() {
@@ -98,7 +99,20 @@ export default function DishDetailPage() {
               {dish.cookedDates.length === 0 ? (
                 <div className="muted">まだ記録がありません</div>
               ) : (
-                <div style={{ whiteSpace: 'pre-wrap' }}>{dish.cookedDates.join('\n')}</div>
+                <div>
+                  {dish.cookedDates.map((ymd) => (
+                    <div className="dateRow" key={ymd}>
+                      <span>{ymd}</span>
+                      <button
+                        className="btn btn-sm"
+                        type="button"
+                        onClick={() => addCookedDateToCalendar(dish.name, ymd, dish.ingredients)}
+                      >
+                        カレンダーに登録
+                      </button>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
 

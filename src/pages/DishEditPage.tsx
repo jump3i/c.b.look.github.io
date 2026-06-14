@@ -150,7 +150,7 @@ export default function DishEditPage({ mode }: Props) {
             </div>
 
             <div className="card stack">
-              <div style={{ fontWeight: 800 }}>栄養（任意）</div>
+              <div style={{ fontWeight: 800 }}>栄養</div>
               <div className="grid2">
                 <NumberWithUnit
                   label="カロリー"

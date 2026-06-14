@@ -40,7 +40,7 @@ export default function DishListPage() {
         <div className="topbar-inner">
           <div className="title">{headerTitle}</div>
           <Link className="btn" to="/dishes/new">
-            新規
+            追加
           </Link>
         </div>
         <div className="topbar-inner" style={{ paddingTop: 0 }}>
@@ -48,7 +48,7 @@ export default function DishListPage() {
             className="input"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            placeholder="検索（料理名/材料/手順/栄養/メモ）"
+            placeholder="検索"
             inputMode="search"
           />
         </div>
